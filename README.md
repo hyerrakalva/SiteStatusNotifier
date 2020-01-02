@@ -59,6 +59,7 @@ The `--help` (or `-h`) argument prints out information in the command line showi
 ## Supported Services
 - Discord
 - Facebook
+- GitHub
 - Instagram
 - Snapchat
 - Reddit

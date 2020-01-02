@@ -65,3 +65,7 @@ def instagram_status_checker():
 
 def snapchat_status_checker():
     return downdetector_interface('snapchat')
+
+
+def github_status_checker():
+    return statuspage_io_interface('kctbh9vrtdwd')
