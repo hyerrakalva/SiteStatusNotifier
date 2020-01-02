@@ -51,10 +51,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Notifies when a website or service is back online.")
     parser.add_argument('service_name', metavar='site', type=str, nargs=1,
                         help='name of the website or service to track')  # TODO: add choices parameter
-    parser.add_argument('-d', '--delay', metavar='min', type=float, default=0,
+    parser.add_argument('--delay', '-d', metavar='min', type=float, default=0,
                         help="number of minutes to delay for before beginning to check status, useful when a site's"
                              " outage has not yet been reflected by outage detectors")
-    parser.add_argument('-t', '--timeout', metavar='hrs', type=float, default=float('inf'), help="number of hours to"
+    parser.add_argument('--timeout', '-t', metavar='hrs', type=float, default=float('inf'), help="number of hours to"
                         " track site's status for before exiting")  # TODO: add timeout functionality
     # TODO: add argument that allows user to change refresh rate
     args = parser.parse_args()
