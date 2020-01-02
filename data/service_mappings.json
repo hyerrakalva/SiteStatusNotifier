@@ -1,0 +1,20 @@
+{
+  "synonyms": {
+    "reddit": "Reddit",
+    "facebook": "Facebook",
+    "fb": "Facebook",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "insta": "Instagram",
+    "ig": "Instagram",
+    "snapchat": "Snapchat",
+    "sc": "Snapchat"
+  },
+  "functions": {
+    "Reddit": "reddit_status_checker",
+    "Facebook": "facebook_status_checker",
+    "Discord": "discord_status_checker",
+    "Instagram": "instagram_status_checker",
+    "Snapchat": "snapchat_status_checker"
+  }
+}
