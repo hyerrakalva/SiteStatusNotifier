@@ -4,12 +4,12 @@ A tool powered by Python that notifies you when a website or service is back onl
 
 ## Requirements
 - Python 3.7.x
-- Windows 10 (Linux and macOS support coming soon)
 - An internet connection!
+- Operating Systems:
+    - Windows 10
+    - Linux with the `libnotify` package installed (known as `libnotify-bin` in certain distros)
 
 ## Using the Site Status Notifier
-
-
 
 ### Setting Up the Tool
 
@@ -23,7 +23,7 @@ cd SiteStatusNotifier
 Next, create a new Python virtual environment in the cloned repository by running the following command:
 
 ```bash
-python -m venv venv
+python -m venv --system-site-packages venv
 ```
 
 You can activate the virtual environment once you create it. On Windows, this can be achieved by the following command:
@@ -32,10 +32,16 @@ You can activate the virtual environment once you create it. On Windows, this ca
 venv\Scripts\activate
 ```
 
+On Linux, this can be achieved by the following command:
+
+```bash
+source venv/bin/activate
+```
+
 Finally, install all of the Python modules required to run this tool using this `pip` command:
 
 ```bash
-pip install -r requirements.txt
+pip install --ignore-installed -r requirements.txt
 ```
 
 Now you are all set to run the Site Status Notifier on your computer!
