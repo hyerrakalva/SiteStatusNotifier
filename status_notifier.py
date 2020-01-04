@@ -26,8 +26,8 @@ def status_notifier(cli_args):
         status = func()  # 0 indicates no outage, 1 indicates partial outage, and 2 indicates full outage.
         if status == OutageStatus.NO_OUTAGE:
             send_notification(service + " Status Notifier", service + " seems to be online already!")
-            print(service + " seems to be online already. If " + service + " has just gone down, please try rerunning with "
-                                                                           "a specified --delay argument.")
+            print(service + " seems to be online already. If " + service +
+                  " has just gone down, please try rerunning with a specified --delay argument.")
             return -1
 
         while status != OutageStatus.NO_OUTAGE:
