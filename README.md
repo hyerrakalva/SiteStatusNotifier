@@ -58,7 +58,7 @@ The `site` argument is required and is where you specify the name of the [servic
 
 The `--delay` (or `-d`) argument allows you to set a delay in minutes before the Site Status Notifier starts checking if a service is back online. This is useful if a site has just gone down and you want to run the tool in the background before the site's outage has not yet been acknowledged online. This way, the tool will not exit right away and will instead give online status trackers a chance to acknowledge this outage before beginning to fetch status data. If this argument is not specified, there will be no delay.
 
-(**NOT FUNCTIONAL YET**) The `--timeout` (or `-t`) argument allows you to set a certain number of hours after which the Site Status Notifier exits even if the selected service is not back online. When this argument is not specified, the tool will continue to track the service's status for an indefinite amount of time.
+The `--timeout` (or `-t`) argument allows you to set a certain number of hours after which the Site Status Notifier exits even if the selected service is not back online. If this argument is not specified, the tool will continue to track the service's status for an indefinite amount of time.
 
 The `--help` (or `-h`) argument prints out information in the command line showing how to use this tool.
 

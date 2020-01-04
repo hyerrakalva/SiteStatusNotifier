@@ -30,8 +30,15 @@ def status_notifier(cli_args):
                   " has just gone down, please try rerunning with a specified --delay argument.")
             return -1
 
+        running_time = cli_args.timeout * 3600
         while status != OutageStatus.NO_OUTAGE:
+            if running_time <= 0:
+                send_notification(service + " Status Notifier", service + " Status Notifier will now exit as "
+                                  + service + " was unable to come back online within " + str(cli_args.timeout)
+                                  + " hour." if cli_args.timeout == 1 else " hours.")
+                return -3
             time.sleep(60)
+            running_time -= 60
             new_status = func()
             if status == OutageStatus.FULL_OUTAGE and new_status == OutageStatus.PARTIAL_OUTAGE:
                 send_notification(service + " Status Notifier", service + "'s status seems to have improved, but there "
@@ -55,7 +62,7 @@ if __name__ == '__main__':
                         help="number of minutes to delay for before beginning to check status, useful when a site's"
                              " outage has not yet been reflected by outage detectors")
     parser.add_argument('--timeout', '-t', metavar='hrs', type=float, default=float('inf'), help="number of hours to"
-                        " track site's status for before exiting")  # TODO: add timeout functionality
+                        " track site's status for before exiting")
     # TODO: add argument that allows user to change refresh rate
     args = parser.parse_args()
     exit_code = status_notifier(args)
