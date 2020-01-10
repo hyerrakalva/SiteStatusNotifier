@@ -69,3 +69,15 @@ def snapchat_status_checker():
 
 def github_status_checker():
     return statuspage_io_interface('kctbh9vrtdwd')
+
+
+def netflix_status_checker():
+    status_url = "https://help.netflix.com/en/is-netflix-down"
+    response = requests.get(status_url)
+    result = BeautifulSoup(response.text, "html.parser").findAll("div", {"class": "down-notification-content"})
+    if len(result) != 1:
+        return downdetector_interface('netflix')
+    if "Netflix is up!" in result[0].text:
+        return OutageStatus.NO_OUTAGE
+    else:
+        return OutageStatus.FULL_OUTAGE

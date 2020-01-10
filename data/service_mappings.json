@@ -9,7 +9,8 @@
     "ig": "Instagram",
     "snapchat": "Snapchat",
     "sc": "Snapchat",
-    "github": "GitHub"
+    "github": "GitHub",
+    "netflix": "Netflix"
   },
   "functions": {
     "Reddit": "reddit_status_checker",
@@ -17,6 +18,7 @@
     "Discord": "discord_status_checker",
     "Instagram": "instagram_status_checker",
     "Snapchat": "snapchat_status_checker",
-    "GitHub": "github_status_checker"
+    "GitHub": "github_status_checker",
+    "Netflix": "netflix_status_checker"
   }
 }
