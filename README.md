@@ -70,3 +70,4 @@ The `--help` (or `-h`) argument prints out information in the command line showi
 - Netflix
 - Reddit
 - Snapchat
+- Twitter

@@ -81,3 +81,7 @@ def netflix_status_checker():
         return OutageStatus.NO_OUTAGE
     else:
         return OutageStatus.FULL_OUTAGE
+
+
+def twitter_status_checker():
+    return statuspage_io_interface('zjttvm6ql9lp')
