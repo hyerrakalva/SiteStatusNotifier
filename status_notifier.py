@@ -39,7 +39,15 @@ def status_notifier(cli_args):
                 return -3
             time.sleep(60)
             running_time -= 60
-            new_status = func()
+            try:
+                new_status = func()
+            except requests.exceptions.ConnectionError:
+                time.sleep(2)
+                try:
+                    new_status = func()
+                except requests.exceptions.ConnectionError:
+                    time.sleep(2)
+                    new_status = func()
             if status == OutageStatus.FULL_OUTAGE and new_status == OutageStatus.PARTIAL_OUTAGE:
                 send_notification(service + " Status Notifier", service + "'s status seems to have improved, but there "
                                   "may still be some issues.")
@@ -48,6 +56,10 @@ def status_notifier(cli_args):
         send_notification(service + " Status Notifier", "Looks like " + service + " is back online!")
         time.sleep(5)
         return 0
+    except requests.exceptions.ConnectionError:
+        send_notification(service + " Status Notifier", "Oops, " + service + " Status Notifier was unable to connect to"
+                          " the Internet. Please check your Internet connection and try again.")
+        raise
     except:
         send_notification("Site Status Notifier",
                           "Oops, something went wrong. Please check the command line for more info.")
