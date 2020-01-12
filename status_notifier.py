@@ -5,10 +5,6 @@ from checker_functions import *
 from notification import send_notification
 
 
-def test_function():
-    return OutageStatus.NO_OUTAGE
-
-
 def status_notifier(cli_args):
     try:
         with open("data/service_mappings.json") as f:
