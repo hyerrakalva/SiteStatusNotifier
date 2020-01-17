@@ -26,6 +26,9 @@ def status_notifier(cli_args):
                   " has just gone down, please try rerunning with a specified --delay argument.")
             return -1
 
+        print(service + " - " + ("partial outage" if status == OutageStatus.PARTIAL_OUTAGE else "major outage"))
+        print("Waiting for " + service + " to get fully back online...")
+
         running_time = cli_args.timeout * 3600
         while status != OutageStatus.NO_OUTAGE:
             if running_time <= 0:
