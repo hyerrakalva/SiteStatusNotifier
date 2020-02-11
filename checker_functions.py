@@ -13,10 +13,10 @@ class OutageStatus(Enum):
 # Current services include Reddit and Discord
 def statuspage_io_interface(service_id):
     api_url = 'https://' + service_id + '.statuspage.io/api/v2/status.json'
-    status = requests.get(api_url).json()['status']['description']
-    if status == "All Systems Operational":
+    status = requests.get(api_url).json()['status']['indicator']
+    if status == "none":
         return OutageStatus.NO_OUTAGE
-    elif status == "Partial System Outage":
+    elif status == "minor":
         return OutageStatus.PARTIAL_OUTAGE
     else:
         return OutageStatus.FULL_OUTAGE
