@@ -88,5 +88,6 @@ def netflix_status_checker():
 def twitter_status_checker():
     return statuspage_io_interface('zjttvm6ql9lp')
 
+
 def zoom_status_checker():
     return statuspage_io_interface('14qjgk812kgk')
