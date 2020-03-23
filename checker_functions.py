@@ -51,7 +51,9 @@ def facebook_status_checker():
     status = requests.get(api_url).json()['current']['health']
     if status == 1:
         return OutageStatus.NO_OUTAGE
-    else:  # TODO: Account for partial outage
+    elif status == 2:
+        return OutageStatus.PARTIAL_OUTAGE
+    else:  # TODO: Verify that full outage status code is not 2
         return OutageStatus.FULL_OUTAGE
 
 
