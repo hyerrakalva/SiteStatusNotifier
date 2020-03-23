@@ -11,7 +11,8 @@
     "sc": "Snapchat",
     "github": "GitHub",
     "netflix": "Netflix",
-    "twitter": "Twitter"
+    "twitter": "Twitter",
+    "zoom": "Zoom"
   },
   "functions": {
     "Reddit": "reddit_status_checker",
@@ -21,6 +22,7 @@
     "Snapchat": "snapchat_status_checker",
     "GitHub": "github_status_checker",
     "Netflix": "netflix_status_checker",
-    "Twitter": "twitter_status_checker"
+    "Twitter": "twitter_status_checker",
+    "Zoom": "zoom_status_checker"
   }
 }
