@@ -91,3 +91,7 @@ def twitter_status_checker():
 
 def zoom_status_checker():
     return statuspage_io_interface('14qjgk812kgk')
+
+
+def google_status_checker():
+    return downdetector_interface('google')

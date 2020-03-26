@@ -12,7 +12,8 @@
     "github": "GitHub",
     "netflix": "Netflix",
     "twitter": "Twitter",
-    "zoom": "Zoom"
+    "zoom": "Zoom",
+    "google": "Google"
   },
   "functions": {
     "Reddit": "reddit_status_checker",
@@ -23,6 +24,7 @@
     "GitHub": "github_status_checker",
     "Netflix": "netflix_status_checker",
     "Twitter": "twitter_status_checker",
-    "Zoom": "zoom_status_checker"
+    "Zoom": "zoom_status_checker",
+    "Google": "google_status_checker"
   }
 }

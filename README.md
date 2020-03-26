@@ -66,6 +66,7 @@ The `--help` (or `-h`) argument prints out information in the command line showi
 - Discord
 - Facebook
 - GitHub
+- Google
 - Instagram
 - Netflix
 - Reddit
